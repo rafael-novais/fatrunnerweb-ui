@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { HomeComponent } from './features/home/home.component';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+  standalone: true,
+  imports: [HomeComponent],
+  template: '<app-home />',
+  styles: [`:host{display:block;min-height:100dvh}`],
 })
-export class App {
-  protected readonly title = signal('fatrunner');
-}
+export class App {}

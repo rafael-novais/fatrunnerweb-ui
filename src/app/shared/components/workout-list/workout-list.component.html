@@ -1,0 +1,9 @@
+<section class="workouts" aria-labelledby="workout-heading">
+  <h2 id="workout-heading">Últimos treinos</h2>
+  @for (workout of workouts; track workout.date) {
+    <article class="workout-card">
+      <div class="distance"><span class="date">{{ workout.date }}</span><div class="km"><strong>{{ workout.distance }}</strong><span>km</span></div></div>
+      <div class="pace"><strong>{{ workout.duration }}</strong><span>{{ workout.pace }} /km</span></div>
+    </article>
+  }
+</section>

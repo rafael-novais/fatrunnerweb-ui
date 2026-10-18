@@ -1,0 +1,12 @@
+:host { display: block; }
+.workouts { display: flex; flex-direction: column; gap: 10px; }
+.workouts h2 { font: 700 20px/1.2 'Trebuchet MS', system-ui, sans-serif; margin: 0 0 2px; }
+.workout-card { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.distance, .pace { display: flex; flex-direction: column; gap: 2px; }
+.date, .pace { font-size: 14px; color: var(--muted); }
+.date { font-size: 13px; }
+.km { display: flex; align-items: baseline; gap: 4px; }
+.km strong { font: 700 38px/1.05 'Trebuchet MS', system-ui, sans-serif; color: var(--ink); }
+.km span { font-size: 16px; font-weight: 700; color: var(--accent); }
+.pace { text-align: right; }
+.pace strong { color: var(--ink); font-weight: 700; }

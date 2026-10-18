@@ -1,0 +1,38 @@
+:host {
+  --canvas: #fbf8f3;
+  --surface: #fff;
+  --ink: #14201b;
+  --muted: #5a6560;
+  --line: #e8e2d6;
+  --accent: #c2410c;
+  display: block;
+  min-height: 100dvh;
+  color: var(--ink);
+  background: #f0ede7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dashboard {
+  box-sizing: border-box;
+  width: min(100%, 438px);
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: 56px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--canvas);
+}
+
+.register { margin-top: auto; min-height: 56px; box-sizing: border-box; display: flex; justify-content: center; align-items: center; border-radius: 14px; background: var(--accent); color: white; font-size: 17px; font-weight: 700; text-decoration: none; transition: filter .2s, transform .2s; }
+.register:hover { filter: brightness(.94); }
+.register:active { transform: scale(.99); }
+.register:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+@media (max-width: 420px) {
+  .dashboard { padding: 40px 24px 24px; gap: 22px; }
+}
+
+@media (min-width: 700px) {
+  .dashboard { margin-block: 24px; min-height: calc(100dvh - 48px); border-radius: 28px; box-shadow: 0 18px 60px rgb(20 32 27 / 9%); }
+}

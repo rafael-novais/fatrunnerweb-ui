@@ -1,0 +1,32 @@
+:host { display: flex; flex-direction: column; gap: 24px; }
+.summary { display: flex; flex-direction: column; gap: 4px; }
+.eyebrow { color: var(--muted); font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.distance { display: flex; align-items: baseline; gap: 8px; }
+.distance strong { font: 700 64px/1 'Trebuchet MS', system-ui, sans-serif; letter-spacing: -.045em; }
+.distance span { font-size: 20px; font-weight: 500; }
+.summary p { margin: 0; color: var(--muted); font-size: 15px; }
+.progress { height: 10px; overflow: hidden; border-radius: 5px; background: var(--line); }
+.progress span { display: block; height: 100%; border-radius: inherit; background: var(--accent); transition: width .25s ease; }
+.volume { display: flex; flex-direction: column; gap: 8px; }
+.slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.slides::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; display: flex; flex-direction: column; gap: 8px; }
+.slide-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.slide-heading h2 { font: 700 20px/1.2 'Trebuchet MS', system-ui, sans-serif; margin: 0; }
+.slide-heading span { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.slide svg { width: 100%; height: auto; overflow: visible; }
+.gridline { stroke: var(--line); }
+.goal-line { stroke: #8c8576; stroke-dasharray: 4 4; }
+.trend { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.point { fill: var(--surface); stroke: var(--accent); stroke-width: 3; }
+.point.filled { fill: var(--accent); }
+.goal-ring { fill: var(--surface); stroke: var(--accent); stroke-width: 3; }
+.goal-dot { fill: var(--accent); }
+.small, .axis { font: 12px 'Trebuchet MS', system-ui, sans-serif; fill: var(--muted); }
+.axis { text-anchor: middle; }
+.axis.active { font-weight: 700; fill: var(--ink); }
+.value { font: 700 13px 'Trebuchet MS', system-ui, sans-serif; fill: var(--ink); }
+.goal-text { font: 700 12px 'Trebuchet MS', system-ui, sans-serif; fill: var(--accent); }
+.dots { display: flex; justify-content: center; gap: 6px; }
+.dots span { height: 6px; width: 6px; border-radius: 99px; background: #cfc8b8; transition: width .2s, background .2s; }
+.dots span.selected { width: 18px; background: var(--accent); }

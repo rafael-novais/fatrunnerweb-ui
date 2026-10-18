@@ -1,0 +1,43 @@
+<section class="summary" aria-live="polite">
+  <span class="eyebrow">{{ summary.label }}</span>
+  <div class="distance"><strong>{{ summary.value }}</strong><span>km</span></div>
+  <p>{{ summary.goal }}</p>
+</section>
+<div class="progress" role="progressbar" [attr.aria-valuenow]="summary.progress" aria-valuemin="0" aria-valuemax="100" [attr.aria-label]="'Meta concluída: ' + summary.progress + '%'">
+  <span [style.width.%]="summary.progress"></span>
+</div>
+
+<section class="volume" aria-label="Volume de corrida">
+  <div #slides class="slides" (scroll)="onScroll()">
+    <article class="slide">
+      <div class="slide-heading"><h2>Volume da semana</h2><span>km acumulados</span></div>
+      <svg viewBox="0 0 342 128" role="img" aria-label="Volume semanal: 18,4 quilômetros, meta de 25 quilômetros">
+        <line x1="0" y1="100" x2="342" y2="100" class="gridline"/><line x1="0" y1="20" x2="342" y2="20" class="goal-line"/>
+        <text x="0" y="13" class="small">meta 25 km</text>
+        <polyline points="22,100 71.7,100 121.3,73.8 171,73.8 220.7,61 270.4,41.1 320,41.1" class="trend"/>
+        <circle cx="121.3" cy="73.8" r="5" class="point"/><circle cx="220.7" cy="61" r="5" class="point"/><circle cx="270.4" cy="41.1" r="5" class="point"/><circle cx="320" cy="41.1" r="6" class="point filled"/>
+        <text x="320" y="62" class="value" text-anchor="end">18,4</text><circle cx="320" cy="20" r="8" class="goal-ring"/><circle cx="320" cy="20" r="3" class="goal-dot"/><text x="306" y="34" class="goal-text" text-anchor="end">faltam 6,6 km</text>
+        <text x="22" y="122" class="axis">Seg</text><text x="71.7" y="122" class="axis">Ter</text><text x="121.3" y="122" class="axis">Qua</text><text x="171" y="122" class="axis">Qui</text><text x="220.7" y="122" class="axis">Sex</text><text x="270.4" y="122" class="axis">Sáb</text><text x="320" y="122" class="axis active">Dom</text>
+      </svg>
+    </article>
+    <article class="slide">
+      <div class="slide-heading"><h2>Volume do mês</h2><span>km acumulados · out</span></div>
+      <svg viewBox="0 0 342 128" role="img" aria-label="Volume do mês: 47,2 quilômetros, meta de 100 quilômetros">
+        <line x1="0" y1="100" x2="342" y2="100" class="gridline"/><line x1="0" y1="20" x2="342" y2="20" class="goal-line"/><text x="0" y="13" class="small">meta 100 km</text>
+        <polyline points="22,92.8 96.5,77 171,62.2" class="trend"/><circle cx="22" cy="92.8" r="5" class="point"/><circle cx="96.5" cy="77" r="5" class="point"/><circle cx="171" cy="62.2" r="6" class="point filled"/><text x="171" y="84.2" class="value" text-anchor="middle">47,2</text>
+        <circle cx="320" cy="20" r="8" class="goal-ring"/><circle cx="320" cy="20" r="3" class="goal-dot"/><text x="306" y="34" class="goal-text" text-anchor="end">faltam 52,8 km</text>
+        <text x="22" y="122" class="axis">Sem 1</text><text x="96.5" y="122" class="axis">Sem 2</text><text x="171" y="122" class="axis active">Sem 3</text><text x="245.5" y="122" class="axis">Sem 4</text><text x="320" y="122" class="axis">Sem 5</text>
+      </svg>
+    </article>
+    <article class="slide">
+      <div class="slide-heading"><h2>Volume do ano</h2><span>km acumulados · 2026</span></div>
+      <svg viewBox="0 0 342 128" role="img" aria-label="Volume do ano: 807,2 quilômetros, meta de 1.200 quilômetros">
+        <line x1="0" y1="100" x2="342" y2="100" class="gridline"/><line x1="0" y1="20" x2="342" y2="20" class="goal-line"/><text x="0" y="13" class="small">meta 1.200 km</text>
+        <polyline points="22,95.9 49.1,91.2 76.2,85.5 103.3,79.5 130.4,73.2 157.5,67.9 184.5,62 211.6,55.9 238.7,49.3 265.8,46.2" class="trend"/><circle cx="265.8" cy="46.2" r="6" class="point filled"/><text x="265.8" y="68.2" class="value" text-anchor="middle">807</text>
+        <circle cx="320" cy="20" r="8" class="goal-ring"/><circle cx="320" cy="20" r="3" class="goal-dot"/><text x="306" y="34" class="goal-text" text-anchor="end">faltam 392,8 km</text>
+        <text x="22" y="122" class="axis">Jan</text><text x="49.1" y="122" class="axis">Fev</text><text x="76.2" y="122" class="axis">Mar</text><text x="103.3" y="122" class="axis">Abr</text><text x="130.4" y="122" class="axis">Mai</text><text x="157.5" y="122" class="axis">Jun</text><text x="184.5" y="122" class="axis">Jul</text><text x="211.6" y="122" class="axis">Ago</text><text x="238.7" y="122" class="axis">Set</text><text x="265.8" y="122" class="axis active">Out</text><text x="292.9" y="122" class="axis">Nov</text><text x="320" y="122" class="axis">Dez</text>
+      </svg>
+    </article>
+  </div>
+  <div class="dots" aria-hidden="true"><span [class.selected]="page() === 0"></span><span [class.selected]="page() === 1"></span><span [class.selected]="page() === 2"></span></div>
+</section>
