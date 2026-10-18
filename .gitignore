@@ -49,3 +49,5 @@ speed-measure-plugin*.json
 # System files
 .DS_Store
 Thumbs.db
+
+/design
